@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 暖橙底（与 nzp 深蓝区分，一眼可辨是广播） -->
+    <path
+        android:fillColor="#3A1B08"
+        android:pathData="M0,0h108v108h-108z" />
+    <!-- 声波 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFCC80"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M12,22q-10,10 0,20" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFA726"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M22,30q-7,7 0,14" />
+    <!-- 收音机机身 -->
+    <path
+        android:fillColor="#FFB74D"
+        android:pathData="M34,40h62v44h-62z" />
+    <!-- 喇叭 -->
+    <path
+        android:fillColor="#3A1B08"
+        android:pathData="M42,50h22v24h-22z" />
+    <!-- 调频刻度 -->
+    <path
+        android:fillColor="#3A1B08"
+        android:pathData="M72,52h18v4h-18z" />
+    <path
+        android:fillColor="#3A1B08"
+        android:pathData="M72,61h13v4h-13z" />
+    <path
+        android:fillColor="#3A1B08"
+        android:pathData="M72,70h16v4h-16z" />
+    <!-- 天线 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFCC80"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M72,40L88,20" />
+</vector>

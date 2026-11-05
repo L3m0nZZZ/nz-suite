@@ -1,0 +1,275 @@
+{
+  "channels": [
+    {
+      "id": 4,
+      "name": "东明县人民广播电台FM90.2",
+      "primary_url": "litenews://111?name=%E4%B8%9C%E6%98%8E%E5%8E%BF%E5%B9%BF%E6%92%AD%E7%94%B5%E8%A7%86%E5%8F%B0%E7%BB%BC%E5%90%88%E5%B9%BF%E6%92%AD",
+      "category": "山东",
+      "region": "东明",
+      "player": "auto"
+    },
+    {
+      "id": 5,
+      "name": "单县人民广播电台FM88.8",
+      "primary_url": "litenews://155?name=%E5%8D%95%E5%8E%BF%E5%B9%BF%E6%92%AD%E7%94%B5%E5%8F%B0",
+      "category": "山东",
+      "region": "单县",
+      "player": "auto"
+    },
+    {
+      "id": 6,
+      "name": "定陶区人民广播电台FM90.4",
+      "primary_url": "litenews://27?name=%E5%AE%9A%E9%99%B6%E7%BB%BC%E5%90%88%E5%B9%BF%E6%92%AD",
+      "backup_url": "http://lhttp.qingting.fm/live/20211680/64k.mp3",
+      "category": "山东",
+      "region": "定陶",
+      "player": "auto"
+    },
+    {
+      "id": 7,
+      "name": "巨野县人民广播电台FM94.1",
+      "primary_url": "litenews://139?name=%E5%B7%A8%E9%87%8E%E4%BA%BA%E6%B0%91%E5%B9%BF%E6%92%AD%E7%94%B5%E5%8F%B0",
+      "category": "山东",
+      "region": "巨野",
+      "player": "auto"
+    },
+    {
+      "id": 8,
+      "name": "成武县人民广播电台FM103.1",
+      "primary_url": "litenews://131?name=%E6%88%90%E6%AD%A6%E5%8E%BF%E8%9E%8D%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83%E7%BB%BC%E5%90%88%E5%B9%BF%E6%92%AD",
+      "backup_url": "https://lhttp-hw.qtfm.cn/live/20211637/64k.mp3",
+      "category": "山东",
+      "region": "成武",
+      "player": "auto"
+    },
+    {
+      "id": 9,
+      "name": "曹县人民广播电台FM93.3",
+      "primary_url": "litenews://87?name=%E6%9B%B9%E5%8E%BF%E8%9E%8D%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83%E7%BB%BC%E5%90%88%E5%B9%BF%E6%92%AD",
+      "backup_url": "http://lhttp.qingting.fm/live/5022340/64k.mp3",
+      "category": "山东",
+      "region": "曹县",
+      "player": "auto"
+    },
+    {
+      "id": 10,
+      "name": "牡丹区资讯广播FM103.5",
+      "primary_url": "https://lhttp.qtfm.cn/live/15318316/64k.mp3",
+      "category": "山东",
+      "region": "牡丹",
+      "player": "auto"
+    },
+    {
+      "id": 11,
+      "name": "郓城县人民广播电台",
+      "primary_url": "litenews://135?name=%E9%83%93%E5%9F%8E%E8%9E%8D%E5%AA%92%E7%BB%BC%E5%90%88%E5%B9%BF%E6%92%AD&kind=radio",
+      "category": "山东",
+      "region": "郓城",
+      "player": "auto"
+    },
+    {
+      "id": 12,
+      "name": "鄄城县人民广播电台FM94.3",
+      "primary_url": "litenews://141?name=%E9%84%84%E5%9F%8E%E5%8E%BF%E8%9E%8D%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83",
+      "category": "山东",
+      "region": "鄄城",
+      "player": "auto"
+    },
+    {
+      "id": 13,
+      "name": "平原县人民广播电台FM107.4",
+      "primary_url": "litenews://19?name=%E5%B9%B3%E5%8E%9F%E5%8E%BF%E8%9E%8D%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83%E7%BB%BC%E5%90%88%E5%B9%BF%E6%92%AD",
+      "category": "山东",
+      "region": "平原",
+      "player": "auto"
+    },
+    {
+      "id": 15,
+      "name": "东平广播电台FM106.3",
+      "primary_url": "litenews://187?name=%E4%B8%9C%E5%B9%B3%E5%B9%BF%E6%92%AD%E7%94%B5%E5%8F%B0",
+      "category": "山东",
+      "region": "东平",
+      "player": "auto"
+    },
+    {
+      "id": 16,
+      "name": "宁阳人民广播电台FM95.5",
+      "primary_url": "litenews://123?name=%E5%AE%81%E9%98%B3%E4%BA%BA%E6%B0%91%E5%B9%BF%E6%92%AD%E7%94%B5%E5%8F%B0",
+      "category": "山东",
+      "region": "宁阳",
+      "player": "auto"
+    },
+    {
+      "id": 23,
+      "name": "乳山融媒综合广播FM95.1",
+      "primary_url": "litenews://143?name=%E4%B9%B3%E5%B1%B1%E8%9E%8D%E5%AA%92%E7%BB%BC%E5%90%88%E5%B9%BF%E6%92%AD",
+      "category": "山东",
+      "region": "乳山",
+      "player": "auto"
+    },
+    {
+      "id": 24,
+      "name": "无棣人民广播电台FM107.6",
+      "primary_url": "litenews://169?name=%E6%97%A0%E6%A3%A3%E4%BA%BA%E6%B0%91%E5%B9%BF%E6%92%AD%E7%94%B5%E5%8F%B0",
+      "category": "山东",
+      "region": "无棣",
+      "player": "auto"
+    },
+    {
+      "id": 17,
+      "name": "沈丘听广播",
+      "primary_url": "hntv://shenqiu?cls=2",
+      "category": "河南",
+      "region": "沈丘",
+      "player": "auto"
+    },
+    {
+      "id": 21,
+      "name": "扶沟人民广播FM96.2",
+      "primary_url": "hntv://fugou?cls=2",
+      "category": "河南",
+      "region": "扶沟",
+      "player": "auto"
+    },
+    {
+      "id": 22,
+      "name": "鹿邑人民广播",
+      "primary_url": "hntv://luyi?cls=2",
+      "category": "河南",
+      "region": "鹿邑",
+      "player": "auto"
+    },
+    {
+      "name": "鄂尔多斯新闻综合广播",
+      "primary_url": "https://live.nxw.org.cn/lsdream/oRu0aoe/4096/live.m3u8",
+      "category": "内蒙古",
+      "region": "鄂尔多斯",
+      "player": "auto",
+      "id": 18
+    },
+    {
+      "name": "鄂尔多斯蒙语综合广播",
+      "primary_url": "https://live.nxw.org.cn/lsdream/uE7XojO/4096/live.m3u8",
+      "category": "内蒙古",
+      "region": "鄂尔多斯",
+      "player": "auto",
+      "id": 19
+    },
+    {
+      "name": "鄂尔多斯文体交通广播",
+      "primary_url": "https://live.nxw.org.cn/lsdream/H2qFv3M/4096/live.m3u8",
+      "category": "内蒙古",
+      "region": "鄂尔多斯",
+      "player": "auto",
+      "id": 20
+    },
+    {
+      "id": 25,
+      "name": "芜湖综合广播FM87.8",
+      "primary_url": "https://lhttp-hw.qtfm.cn/live/5029/64k.mp3",
+      "category": "安徽",
+      "region": "芜湖",
+      "player": "auto"
+    },
+    {
+      "id": 26,
+      "name": "芜湖交通经济广播FM96.3",
+      "primary_url": "https://lhttp-hw.qtfm.cn/live/5027/64k.mp3",
+      "category": "安徽",
+      "region": "芜湖",
+      "player": "auto"
+    },
+    {
+      "id": 27,
+      "name": "芜湖音乐故事广播",
+      "primary_url": "https://lhttp-hw.qtfm.cn/live/5028/64k.mp3",
+      "category": "安徽",
+      "region": "芜湖",
+      "player": "auto"
+    },
+    {
+      "name": "齐河广播FM88.2",
+      "primary_url": "litenews://251?name=%E9%BD%90%E6%B2%B3%E5%B9%BF%E6%92%AD%E7%94%B5%E8%A7%86%E5%8F%B0",
+      "category": "山东",
+      "region": "齐河",
+      "player": "auto",
+      "id": 28
+    },
+    {
+      "name": "邹平人民广播电台FM91.1",
+      "primary_url": "litenews://11?name=%E9%82%B9%E5%B9%B3%E4%BA%BA%E6%B0%91%E5%B9%BF%E6%92%AD%E7%94%B5%E5%8F%B0",
+      "category": "山东",
+      "region": "邹平",
+      "player": "auto",
+      "id": 29
+    },
+    {
+      "id": 30,
+      "name": "菏泽新闻广播FM87.5",
+      "primary_url": "https://lhttp.qtfm.cn/live/20212293/64k.mp3",
+      "backup_url": "http://lhttp.qtfm.cn/live/20212293/64k.mp3",
+      "category": "山东",
+      "region": "菏泽",
+      "player": "auto"
+    },
+    {
+      "id": 31,
+      "name": "菏泽交通广播FM94.8",
+      "primary_url": "https://lhttp.qtfm.cn/live/20212294/64k.mp3",
+      "backup_url": "http://lhttp.qtfm.cn/live/20212294/64k.mp3",
+      "category": "山东",
+      "region": "菏泽",
+      "player": "auto"
+    },
+    {
+      "id": 32,
+      "name": "韶关综合广播FM105.7",
+      "primary_url": "https://lhttp.qtfm.cn/live/5022074/64k.mp3",
+      "backup_url": "http://lhttp.qtfm.cn/live/5022074/64k.mp3",
+      "category": "广东",
+      "region": "韶关",
+      "player": "auto"
+    }
+  ],
+  "current_channel_id": 2,
+  "favorites": [],
+  "m3u_file": "",
+  "resilience": {
+    "buffer_stall_sec": 10,
+    "frame_stall_sec": 15,
+    "soft_retry_max": 3,
+    "hard_retry_max": 3,
+    "retry_intervals_sec": [
+      0,
+      5,
+      15,
+      30
+    ],
+    "network_probe_sec": 30
+  },
+  "keepalive": {
+    "daily_restart_time": "04:00",
+    "memory_limit_mb": 250,
+    "crash_restart_delay_sec": 3
+  },
+  "lock": {
+    "channel_lock": false
+  },
+  "audio": {
+    "force_max": true,
+    "boost_mb": 1200,
+    "max_boost_mb": 1500,
+    "note": "force_max=系统媒体音量顶满并持续纠偏; boost_mb=软件数字增益(毫巴,1200≈+12dB); 0=关闭软件增益"
+  },
+  "remote_config": {
+    "server": "",
+    "interval_min": 10,
+    "note": "NZ广播频道服务器(端口60081, 与 nzp 的 60080 区分); 空则禁用远程同步"
+  },
+  "log": {
+    "retention_days": 7
+  },
+  "version": 13,
+  "updated_at": "2026-11-02 17:07:15",
+  "note": "v0.2.1 菏泽市两台换蜻蜓源补回（27 台）"
+}

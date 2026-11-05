@@ -1,0 +1,31 @@
+# Android（nzp / nzg）
+*.iml
+.gradle/
+.idea/
+.kotlin/
+local.properties
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# nzg-win 构建产物（源码在 src/，dist 是 exe 落地产物）
+nzg-win/dist/
+nzg-win/_build/
+nzg-win/**/__pycache__/
+__pycache__/
+*.pyc
+*.o
+
+# 配置备份（本地改动留档，不进仓库）
+*.bak_*
+
+# 杂项
+.DS_Store
+Thumbs.db
+*.log
+logs/

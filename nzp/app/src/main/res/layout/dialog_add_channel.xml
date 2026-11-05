@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="22dp"
+    android:paddingTop="14dp"
+    android:paddingEnd="22dp"
+    android:paddingBottom="6dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="频道名称"
+        android:textColor="#4FC3F7"
+        android:textSize="13sp" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="例如：寿光蔬菜频道"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#66FFFFFF" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="直播流地址（m3u8 / http-ts）"
+        android:textColor="#4FC3F7"
+        android:textSize="13sp" />
+
+    <EditText
+        android:id="@+id/editUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="https:// 或 http:// 开头"
+        android:inputType="textUri"
+        android:maxLines="1"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#66FFFFFF" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="6dp"
+        android:text="添加后进入「自定义」分组；在列表里长按频道可收藏/取消收藏"
+        android:textColor="#88FFFFFF"
+        android:textSize="12sp" />
+</LinearLayout>

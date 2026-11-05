@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NZ播放器</string>
+    <string name="wait_network">网络已断开，正在等待恢复…\n\n每 30 秒自动探测，恢复后立即回到原频道</string>
+</resources>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:resize_mode="fit"
+        app:surface_type="surface_view"
+        app:use_controller="false" />
+
+    <!-- 断网等待提示（休眠等待模式时显示） -->
+    <TextView
+        android:id="@+id/waitMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowRadius="6"
+        android:text="@string/wait_network"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:visibility="gone" />
+
+    <!-- 左下角半透明状态栏，5秒无操作自动隐藏 -->
+    <TextView
+        android:id="@+id/statusBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="16dp"
+        android:background="#CC000000"
+        android:lineSpacingExtra="4dp"
+        android:paddingStart="14dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="8dp"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp" />
+
+    <!-- 左侧频道栏：一级省份分类(左) + 二级地区分组频道(右)，点屏幕空白处关闭 -->
+    <LinearLayout
+        android:id="@+id/sidebar"
+        android:layout_width="540dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#F50A1622"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- 顶栏 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="#E012283C"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="18dp"
+            android:paddingEnd="14dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="频道列表"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_btn_add"
+                android:paddingStart="14dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="14dp"
+                android:paddingBottom="6dp"
+                android:text="＋ 添加"
+                android:textColor="#0A1622"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- 一级分类 + 二级频道 双栏 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!-- 一级分类（收藏 / 央视 / 山东 / 内蒙古 / 河南 / 陕西…） -->
+            <ScrollView
+                android:id="@+id/catScroll"
+                android:layout_width="128dp"
+                android:layout_height="match_parent"
+                android:background="#CC081420"
+                android:fadeScrollbars="false"
+                android:scrollbarSize="3dp">
+
+                <LinearLayout
+                    android:id="@+id/catList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </ScrollView>
+
+            <!-- 分隔线 -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#224FC3F7" />
+
+            <!-- 二级内容：地区分组频道列表 -->
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fadeScrollbars="true"
+                android:scrollbarSize="4dp">
+
+                <LinearLayout
+                    android:id="@+id/channelList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

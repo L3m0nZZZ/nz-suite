@@ -1,0 +1,979 @@
+{
+    "channels":  [
+                     {
+                         "id":  1,
+                         "name":  "寿光蔬菜频道",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001045/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto",
+                         "headers":  {
+                                         "User-Agent":  "Mozilla/5.0 (Linux; Android 9; TV) AppleWebKit/537.36"
+                                     }
+                     },
+                     {
+                         "id":  2,
+                         "name":  "威海新闻综合",
+                         "primary_url":  "https://v.whnews.cn/hls2/0k9ludd7N4.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  3,
+                         "name":  "寿光综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001000/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  4,
+                         "name":  "潍坊综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001042/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  5,
+                         "name":  "潍坊影视综艺",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00000217/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  6,
+                         "name":  "高密综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001089/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  7,
+                         "name":  "东营新闻",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00000226/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  8,
+                         "name":  "东平综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001001/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  9,
+                         "name":  "沂源综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001002/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  10,
+                         "name":  "淄川新闻",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001007/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  11,
+                         "name":  "商河综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001008/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  12,
+                         "name":  "新闻综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001004/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  13,
+                         "name":  "惠民综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001009/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  14,
+                         "name":  "莒县综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001014/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  15,
+                         "name":  "新泰综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001029/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  16,
+                         "name":  "兰陵综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001032/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  17,
+                         "name":  "淄博影视",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001037/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  18,
+                         "name":  "冠县综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001040/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  19,
+                         "name":  "郓城新闻",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001041/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  20,
+                         "name":  "广饶综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001043/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  21,
+                         "name":  "岚山电视",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001044/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  22,
+                         "name":  "巨野新闻",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001046/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  23,
+                         "name":  "莘县综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001047/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  24,
+                         "name":  "茌平综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001048/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  25,
+                         "name":  "乳山综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001049/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  26,
+                         "name":  "荣成综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001053/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  27,
+                         "name":  "禹城综艺",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001062/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  28,
+                         "name":  "牟平综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001076/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  29,
+                         "name":  "黄岛综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001086/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  30,
+                         "name":  "兰陵公共",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001095/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  31,
+                         "name":  "沂水综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001098/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  32,
+                         "name":  "历城综合",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001105/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  33,
+                         "name":  "茌平县生活频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/live/chiping_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "茌平",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  34,
+                         "name":  "茌平县综合频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/live/chiping_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "茌平",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  35,
+                         "name":  "滨州新闻综合频道",
+                         "primary_url":  "http://ucdn.sd.chinamobile.com:8089/00/SNM/CHANNEL00000220/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "滨州",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  36,
+                         "name":  "滨城区有线电视台",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/bincheng/bincheng_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "滨州",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  37,
+                         "name":  "滨州公共电视剧频道",
+                         "primary_url":  "http://stream.bzcm.net/1/playlist.m3u8",
+                         "backup_url":  "",
+                         "category":  "滨州",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  38,
+                         "name":  "临沂新闻综合频道",
+                         "primary_url":  "http://ucdn.sd.chinamobile.com:8089/00/SNM/CHANNEL00000120/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "临沂",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  39,
+                         "name":  "临沂经济频道",
+                         "primary_url":  "http://ucdn.sd.chinamobile.com:8089/00/SNM/CHANNEL00000121/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "临沂",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  40,
+                         "name":  "泰安经济生活频道",
+                         "primary_url":  "http://ucdn.sd.chinamobile.com:8089/00/SNM/CHANNEL00000270/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "泰安",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  41,
+                         "name":  "泰山区电视台",
+                         "primary_url":  "http://ucdn.sd.chinamobile.com:8089/00/SNM/CHANNEL00000269/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "泰安",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  42,
+                         "name":  "山东教育电视台",
+                         "primary_url":  "http://39.134.66.66/PLTV/88888888/224/3221225558/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  43,
+                         "name":  "山东新闻频道",
+                         "primary_url":  "http://ucdn.sd.chinamobile.com:8089/00/SNM/CHANNEL00000314/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  44,
+                         "name":  "山东农科频道",
+                         "primary_url":  "http://livealone302.iqilu.com/iqilu/nkpd.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  45,
+                         "name":  "山东齐鲁频道",
+                         "primary_url":  "http://livealone302.iqilu.com/iqilu/qlpd.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  46,
+                         "name":  "山东少儿频道",
+                         "primary_url":  "http://livealone302.iqilu.com/iqilu/sepd.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  47,
+                         "name":  "山东文旅频道",
+                         "primary_url":  "http://ucdn.sd.chinamobile.com:8089/00/SNM/CHANNEL00000377/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "山东",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  48,
+                         "name":  "聊城新闻综合频道",
+                         "primary_url":  "http://ucdn.sd.chinamobile.com:8089/00/SNM/CHANNEL00000250/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "聊城",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  49,
+                         "name":  "聊城民生频道",
+                         "primary_url":  "http://ucdn.sd.chinamobile.com:8089/00/SNM/CHANNEL00000251/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "聊城",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  50,
+                         "name":  "潍坊新闻综合频道(1)",
+                         "primary_url":  "http://stream.wfcmw.cn/1/playlist.m3u8",
+                         "backup_url":  "",
+                         "category":  "潍坊",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  51,
+                         "name":  "潍坊经济生活频道(2)",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00000216/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "潍坊",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  52,
+                         "name":  "潍坊科教文旅频道(4)",
+                         "primary_url":  "http://stream.wfcmw.cn/4/playlist.m3u8",
+                         "backup_url":  "",
+                         "category":  "潍坊",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  53,
+                         "name":  "芜湖生活频道",
+                         "primary_url":  "http://live1.wuhubtv.com/channel2/playlist.m3u8",
+                         "backup_url":  "",
+                         "category":  "芜湖",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  54,
+                         "name":  "芜湖新闻综合频道",
+                         "primary_url":  "http://live1.wuhubtv.com/channel1/playlist.m3u8",
+                         "backup_url":  "",
+                         "category":  "芜湖",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  55,
+                         "name":  "周口新闻综合频道",
+                         "primary_url":  "http://tv.zkxww.com:1935/live2/mp4:ch2-500k/playlist.m3u8",
+                         "backup_url":  "",
+                         "category":  "周口",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  56,
+                         "name":  "周口科教频道",
+                         "primary_url":  "http://tv.zkxww.com:1935/live3/mp4:ch3-500k/playlist.m3u8",
+                         "backup_url":  "",
+                         "category":  "周口",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  57,
+                         "name":  "周口图文信息频道",
+                         "primary_url":  "http://tv.zkxww.com:1935/live4/mp4:ch4-500k/playlist.m3u8",
+                         "backup_url":  "",
+                         "category":  "周口",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  58,
+                         "name":  "西华电视台",
+                         "primary_url":  "http://tvpull.dxhmt.cn:9081/tv/11622-1.m3u8",
+                         "backup_url":  "",
+                         "category":  "西华",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  59,
+                         "name":  "鹿邑新闻综合频道",
+                         "primary_url":  "http://tvpull.dxhmt.cn:9081/tv/11628-1.m3u8",
+                         "backup_url":  "",
+                         "category":  "鹿邑",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  60,
+                         "name":  "太康综合",
+                         "primary_url":  "http://tvpull.dxhmt.cn:9081/tv/11627-1.m3u8",
+                         "backup_url":  "",
+                         "category":  "太康",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  61,
+                         "name":  "沈丘电视台新闻综合频道",
+                         "primary_url":  "http://tvpull.dxhmt.cn:9081/tv/11624-1.m3u8",
+                         "backup_url":  "",
+                         "category":  "沈丘",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  62,
+                         "name":  "陕西新闻资讯频道",
+                         "primary_url":  "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226357/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "陕西/西安",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  63,
+                         "name":  "咸阳一套",
+                         "primary_url":  "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226372/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "咸阳",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  64,
+                         "name":  "榆林一套",
+                         "primary_url":  "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226377/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "榆林",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  65,
+                         "name":  "安康新闻综合频道(1)",
+                         "primary_url":  "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226385/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "安康",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  66,
+                         "name":  "铜川新闻综合频道(1)",
+                         "primary_url":  "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226379/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "铜川",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  67,
+                         "name":  "宝鸡新闻综合频道(1)",
+                         "primary_url":  "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226383/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "宝鸡",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  68,
+                         "name":  "延安一套",
+                         "primary_url":  "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226375/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "延安",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  69,
+                         "name":  "鹤壁综合频道",
+                         "primary_url":  "http://pili-live-hls.hebitv.com/hebi/hebi.m3u8",
+                         "backup_url":  "",
+                         "category":  "鹤壁",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  70,
+                         "name":  "惠民电视台综合频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/live/huimin_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "惠民/临邑",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  71,
+                         "name":  "惠民电视台影视频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/live/huimin_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "惠民/临邑",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  72,
+                         "name":  "临邑县一套",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/linyi/linyi_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "惠民/临邑",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  73,
+                         "name":  "博兴广播电视台生活频道",
+                         "primary_url":  "http://jsylivealone302.iqilu.com/live/boxing_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "博兴/平原",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  74,
+                         "name":  "博兴广播电视台新闻频道",
+                         "primary_url":  "http://jsylivealone302.iqilu.com/live/boxing_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "博兴/平原",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  75,
+                         "name":  "平原县新闻频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/pingyuan/pingyuan_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "博兴/平原",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  76,
+                         "name":  "无棣县综艺频道",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001024/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "无棣/齐河",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  77,
+                         "name":  "齐河县新闻综合频道(1)",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001056/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "无棣/齐河",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  78,
+                         "name":  "沾化综艺频道",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001035/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "沾化/夏津",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  79,
+                         "name":  "夏津县公共频道",
+                         "primary_url":  "http://jsylivealone302.iqilu.com/live/xiajin_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "沾化/夏津",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  80,
+                         "name":  "夏津县综合频道",
+                         "primary_url":  "http://jsylivealone302.iqilu.com/live/xiajin_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "沾化/夏津",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  81,
+                         "name":  "邹平民生频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/zouping/zouping_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "邹平/荣成",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  82,
+                         "name":  "邹平新闻频道",
+                         "primary_url":  "http://livealone302.iqilu.com/zouping/zouping_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "邹平/荣成",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  83,
+                         "name":  "陵城区新闻频道",
+                         "primary_url":  "http://jsylivealone302.iqilu.com/live/lingcheng_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "莒县",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  84,
+                         "name":  "五莲县文化旅游频道",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001068/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "五莲/武城",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  85,
+                         "name":  "武城县综艺影视频道",
+                         "primary_url":  "http://jsylivealone302.iqilu.com/live/wucheng_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "五莲/武城",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  86,
+                         "name":  "武城县新闻综合频道",
+                         "primary_url":  "http://jsylivealone302.iqilu.com/live/wucheng_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "五莲/武城",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  87,
+                         "name":  "宁阳县一套",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001071/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "宁阳/环翠",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  88,
+                         "name":  "乳山市新闻综合频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/live/rushan_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "东平/乳山",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  89,
+                         "name":  "乳山市生活频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/live/rushan_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "东平/乳山",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  90,
+                         "name":  "肥城市生活频道(2)",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/laoling/laoling_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "肥城/乐陵",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  91,
+                         "name":  "肥城市综合频道(1)",
+                         "primary_url":  "http://39.134.144.6:8089/PLTV/88888888/224/3221226091/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "肥城/乐陵",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  92,
+                         "name":  "乐陵市新闻综合频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/laoling/laoling_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "肥城/乐陵",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  93,
+                         "name":  "新泰市乡村频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/xintai/xintai_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "新泰/文登",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  94,
+                         "name":  "新泰市新闻综合频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/xintai/xintai_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "新泰/文登",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  95,
+                         "name":  "禹城市综艺频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/yucheng/yucheng_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "禹城",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  96,
+                         "name":  "禹城市综合频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/yucheng/yucheng_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "禹城",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  97,
+                         "name":  "奎文区新闻综合频道",
+                         "primary_url":  "http://livealone302.iqilu.com/gaomi/gaomi_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "奎文/高密",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  98,
+                         "name":  "坊子区新闻综合频道",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001015/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "坊子/安丘",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  99,
+                         "name":  "昌乐县新闻综合频道",
+                         "primary_url":  "http://livealone302.iqilu.com/changle/changle_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "昌乐/昌邑",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  100,
+                         "name":  "昌邑市新闻综合频道",
+                         "primary_url":  "http://jsylivealone302.iqilu.com/live/changyi_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "昌乐/昌邑",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  101,
+                         "name":  "章丘市新闻综合频道",
+                         "primary_url":  "http://39.134.144.6:8089/PLTV/88888888/224/3221226297/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "章丘",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  102,
+                         "name":  "长清综合频道",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001018/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "长青",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  103,
+                         "name":  "长清生活频道",
+                         "primary_url":  "http://jsylivealone302.iqilu.com/live/changqing_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "长青",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  104,
+                         "name":  "济阳县综合频道",
+                         "primary_url":  "http://jsylivealone302.iqilu.com/live/jiyang_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "济阳",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  105,
+                         "name":  "济阳县影视频道",
+                         "primary_url":  "http://jsylivealone302.iqilu.com/live/jiyang_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "济阳",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  106,
+                         "name":  "商河县综合频道",
+                         "primary_url":  "http://jsylivealone302.iqilu.com/live/shanghe_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "商河",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  107,
+                         "name":  "商河影视频道",
+                         "primary_url":  "http://jsylivealone302.iqilu.com/live/shanghe_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "商河",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  108,
+                         "name":  "平阴县综合频道",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001050/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "平阴",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  109,
+                         "name":  "东阿县新闻综合频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/donge/donge_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "东阿",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  110,
+                         "name":  "东阿县综艺信息频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/donge/donge_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "东阿",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  111,
+                         "name":  "东昌综合频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/changle/changle_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "东昌",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  112,
+                         "name":  "高唐县综合频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/gaotang/gaotang_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "高唐",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  113,
+                         "name":  "高唐县综艺频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/gaotang/gaotang_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "高唐",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  114,
+                         "name":  "冠县艺术频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/guanxian/guanxian_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "冠县",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  115,
+                         "name":  "临清市综合频道",
+                         "primary_url":  "http://150.138.8.143/00/SNM/CHANNEL00001103/index.m3u8",
+                         "backup_url":  "",
+                         "category":  "临清",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  116,
+                         "name":  "临清市经济信息频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/live/linqing_tv02.m3u8",
+                         "backup_url":  "",
+                         "category":  "临清",
+                         "player":  "auto"
+                     },
+                     {
+                         "id":  117,
+                         "name":  "阳谷县影视频道",
+                         "primary_url":  "https://jsylivealone302.iqilu.com/yanggu/yanggu_tv01.m3u8",
+                         "backup_url":  "",
+                         "category":  "阳谷",
+                         "player":  "auto"
+                     }
+                 ],
+    "current_channel_id":  2,
+    "favorites":  [
+                      1,
+                      2,
+                      33,
+                      34
+                  ],
+    "m3u_file":  "",
+    "resilience":  {
+                       "buffer_stall_sec":  10,
+                       "frame_stall_sec":  15,
+                       "soft_retry_max":  3,
+                       "hard_retry_max":  3,
+                       "retry_intervals_sec":  [
+                                                   0,
+                                                   5,
+                                                   15,
+                                                   30
+                                               ],
+                       "network_probe_sec":  30
+                   },
+    "keepalive":  {
+                      "daily_restart_time":  "04:00",
+                      "memory_limit_mb":  250,
+                      "crash_restart_delay_sec":  3
+                  },
+    "lock":  {
+                 "channel_lock":  false
+             },
+    "remote_config":  {
+                          "enabled":  false,
+                          "port":  8080
+                      },
+    "log":  {
+                "retention_days":  7
+            }
+}

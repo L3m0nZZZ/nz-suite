@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>守播广播 · 菏泽卡死复盘与 71 台并网（2026-10-23）</title>
+<style>
+  :root{
+    --ink:#1f2430; --ink-2:#4a5160; --ink-3:#7b8290;
+    --line:#e3e6ec; --line-2:#eef0f4;
+    --bg:#f7f8fa; --card:#ffffff;
+    --accent:#2f5bd3; --accent-soft:#eef2fd;
+    --ok:#1a7f4b; --ok-soft:#e9f6ee;
+    --warn:#a8620a; --warn-soft:#fdf3e4;
+    --bad:#b3261e; --bad-soft:#fdeceb;
+    --code:#f4f5f8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;}
+  .wrap{max-width:1000px;margin:0 auto;padding:40px 28px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:20px;margin-bottom:32px}
+  .kicker{font-size:12px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;margin-bottom:8px}
+  h1{font-size:27px;line-height:1.35;margin:0 0 10px;letter-spacing:-.01em}
+  .sub{color:var(--ink-2);font-size:14.5px;margin:0}
+  h2{font-size:19px;margin:44px 0 14px;padding-left:11px;border-left:4px solid var(--accent);line-height:1.3}
+  h3{font-size:15.5px;margin:26px 0 10px;color:var(--ink)}
+  p{margin:10px 0}
+  ul,ol{margin:10px 0 10px 22px;padding:0}
+  li{margin:5px 0}
+  code{font:13px/1.55 "Cascadia Mono",Consolas,"Courier New",monospace;
+    background:var(--code);padding:1.5px 5px;border-radius:4px;color:#25405f}
+  pre{background:var(--code);border:1px solid var(--line);border-radius:8px;
+    padding:14px 16px;overflow-x:auto;margin:12px 0}
+  pre code{background:none;padding:0;font-size:12.6px;color:#25405f}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.8px;background:var(--card)}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f0f2f7;font-weight:600;color:var(--ink-2);white-space:nowrap}
+  tbody tr:nth-child(even){background:#fbfbfd}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0 6px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 16px 14px}
+  .card .n{font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+  .card .t{font-size:15px;font-weight:650;margin:6px 0 6px}
+  .card .d{font-size:13px;color:var(--ink-2);line-height:1.6}
+  .tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:20px;
+    border:1px solid transparent;white-space:nowrap}
+  .ok{color:var(--ok);background:var(--ok-soft);border-color:#cfe9da}
+  .warn{color:var(--warn);background:var(--warn-soft);border-color:#f2ddbd}
+  .bad{color:var(--bad);background:var(--bad-soft);border-color:#f6cfcc}
+  .muted{color:var(--ink-3)}
+  .note{border-left:3px solid var(--accent);background:var(--accent-soft);
+    padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:14px}
+  .danger{border-left-color:var(--bad);background:var(--bad-soft)}
+  .warnbox{border-left-color:#d99a2b;background:var(--warn-soft)}
+  .mono{font-family:"Cascadia Mono",Consolas,monospace;font-size:13px}
+  footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:var(--ink-3);font-size:12.5px}
+  @media print{body{background:#fff}.wrap{max-width:none;padding:0}pre,table{break-inside:avoid}}
+  @media (max-width:760px){.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">守播广播 nzg · 故障复盘与改版记录</div>
+  <h1>「播半天后一直不动」：从菏泽片区定位到两端修复</h1>
+  <p class="sub">2026-10-23 ｜ Windows v1.13.2（71 台）· 安卓 v0.2.2（27 台）｜ 起因：单县、巨野等台播数小时后画面/声音卡死不再恢复</p>
+</header>
+
+<div class="cards">
+  <div class="card">
+    <div class="n">结论一</div>
+    <div class="t">源是活的，问题在客户端</div>
+    <div class="d">单县 155、巨野 139 的 playlist 持续滚动、分片可取。<b>连续六小时零失败</b>（1428 次采样全 200）。</div>
+  </div>
+  <div class="card">
+    <div class="n">结论二</div>
+    <div class="t">两个「死法」，都是自己把自己锁死</div>
+    <div class="d">FFmpeg 无限重连卡死线程；ExoPlayer 对纯音频台压根不判死。两端各中一个。</div>
+  </div>
+  <div class="card">
+    <div class="n">结论三</div>
+    <div class="t">修完还得能证明</div>
+    <div class="d">71/71 自检、6 小时源侧长测、换票实测、<b>APK 字节码核验</b>、73 台源快照全 OK。</div>
+  </div>
+</div>
+
+<h2>一、先给结论</h2>
+
+<table>
+  <thead><tr><th style="width:150px">问题</th><th>答案</th></tr></thead>
+  <tbody>
+    <tr><td>单县/巨野的源坏了吗</td><td>没有。<span class="tag ok">在播</span> 六小时长测零失败，分片持续推进</td></tr>
+    <tr><td>为什么播半天就不动</td><td>Windows：FFmpeg <code>reconnect</code> 让读取永久阻塞，线程杀不掉、越积越多；安卓：判死条件带 <code>videoFormat != null</code>，<b>纯音频台根本不进判死分支</b></td></tr>
+    <tr><td>票过期是不是主因</td><td>不是主因。<b>实测有效期 ≥ 6 小时</b>，原来"几分钟就过期"的假设只对个别平台成立</td></tr>
+    <tr><td>菏泽市两台能救吗</td><td>能。hznet 的 HLS 是冻结时移列表，换蜻蜓官方流后恢复（87.5 / 94.8）</td></tr>
+    <tr><td>现在两端各多少台</td><td>Windows <b>71 台</b>（v1.13.2）／ 安卓 <b>27 台</b>（v0.2.2，versionCode 13）</td></tr>
+    <tr><td>怎么确认真的修好了</td><td>跑 <code>python tools/soak_play.py --minutes 240</code>，报告里 <b>重建 = 0</b> 即通过（当前已通过 2 分钟冒烟）</td></tr>
+  </tbody>
+</table>
+
+<h2>二、核验：73 台逐个探了一遍</h2>
+
+<h3>2.1 判定口径</h3>
+<p>三类源分别处理，全部走"能拉到 + 内容对 + 在推进"三重判据，<b>不只看 HTTP 200</b>：</p>
+<table>
+  <thead><tr><th style="width:170px">源类型</th><th>解析</th><th>判活</th></tr></thead>
+  <tbody>
+    <tr><td>litenews</td><td><code>app.litenews.cn</code> → 100ycdn 子列表（两级 master）</td><td>两次采样看 <code>MEDIA-SEQUENCE</code> / 末片名是否推进</td></tr>
+    <tr><td>hntv（河南大象）</td><td><code>xy-gw</code> 网关，<code>sha256(salt+ts)</code> 签名</td><td>同上（也是 m3u8）</td></tr>
+    <tr><td>直链 mp3/aac</td><td>直接请求</td><td>≥8KB 且前 16KB 内出现帧同步/ID3</td></tr>
+  </tbody>
+</table>
+<div class="note">
+  <b>为什么不用"滞后量"当唯一判据：</b>litenews 的 <code>alivealone302</code> 域名分片名走服务器时钟，
+  比墙钟慢几小时并不等于停推（惠民 lag=2168s、昌邑 lag=21069s 都真在播）。
+  只认滞后会把 10 台在播的台误报成垫片。
+</div>
+
+<h3>2.2 结果</h3>
+<p>Windows 71 台 + 安卓 27 台，按台名去重 <b>73 台</b>：</p>
+<pre><code>耗时 53.3s   OK=73   LAG=0   BAD=0   UNRESOLVED=0</code></pre>
+<p class="muted">快照文件：<code>_capture/nzg_check_result.json</code>；探针：<code>nzg-win/tools/check_sources.py</code></p>
+
+<h3>2.3 菏泽片区逐台</h3>
+<table>
+  <thead><tr><th>台</th><th>频率</th><th>id</th><th>源</th><th>状态</th></tr></thead>
+  <tbody>
+    <tr><td>菏泽新闻广播</td><td>FM87.5</td><td>48</td><td>蜻蜓 <code>20212293</code>（原 hznet 冻结）</td><td><span class="tag ok">在播</span></td></tr>
+    <tr><td>菏泽交通广播</td><td>FM94.8</td><td>47</td><td>蜻蜓 <code>20212294</code>（原 hznet 冻结）</td><td><span class="tag ok">在播</span></td></tr>
+    <tr><td>牡丹区资讯广播</td><td>FM103.5</td><td>55</td><td>litenews 219（牡丹之声）</td><td><span class="tag ok">在播</span></td></tr>
+    <tr><td>单县人民广播电台</td><td>FM88.8</td><td>50</td><td>litenews 155</td><td><span class="tag ok">在播</span></td></tr>
+    <tr><td>巨野县人民广播电台</td><td>FM94.1</td><td>52</td><td>litenews 139</td><td><span class="tag ok">在播</span></td></tr>
+    <tr><td>郓城人民广播</td><td>FM89.5</td><td>45</td><td>litenews 135 <b>tv 端点</b>「郓城综合」音轨</td><td><span class="tag ok">在播</span></td></tr>
+    <tr><td>东明县人民广播电台</td><td>FM90.2</td><td>49</td><td>litenews 111</td><td><span class="tag ok">在播</span></td></tr>
+    <tr><td>定陶区人民广播电台</td><td>FM90.4</td><td>51</td><td>litenews 27</td><td><span class="tag ok">在播</span></td></tr>
+    <tr><td>成武县人民广播电台</td><td>FM103.1</td><td>53</td><td>litenews 131</td><td><span class="tag ok">在播</span></td></tr>
+    <tr><td>曹县人民广播电台</td><td>FM93.3</td><td>54</td><td>litenews 87</td><td><span class="tag ok">在播</span></td></tr>
+    <tr><td>菏泽音乐广播</td><td>FM91.8</td><td>—</td><td>hznet <code>INTCreateTime</code> 停在 2026-04，蜻蜓无对应 id</td><td><span class="tag bad">停播</span></td></tr>
+  </tbody>
+</table>
+<div class="danger note">
+  <b>郓城的坑：</b>litenews 广播端点（radio）分片全 404，但<b>同一个 orgid 的电视端点</b>（tv）一直在播。
+  URL 里加 <code>&amp;kind=tv</code>、name 用「郓城综合」即可——找县台时别只查广播端点。
+</div>
+
+<h2>三、根因：两种"死法"</h2>
+
+<h3>3.1 Windows：reconnect 让读取永不返回</h3>
+<pre><code>/* ❌ 旧配置（看起来更"健壮"，实际是灾难） */
+av_dict_set(&amp;opts, "reconnect", "1", 0);
+av_dict_set(&amp;opts, "reconnect_streamed", "1", 0);
+
+/* 失败链：分片/连接失败 → http 层无限重试且**永不返回错误**
+ *   → av_read_frame 永久阻塞在 hls demuxer 内循环
+ *   → 线程不报错也不退出，waveOut 队列播空 → 彻底静音
+ *   → 看门狗判死，stop_play_thread 等 6 秒超时（Windows 不能强杀线程）
+ *   → 每轮重建泄漏 1 线程 + 若干 socket → 累积半天后彻底不动 */</code></pre>
+<pre><code>/* ✅ 现在：让失败快速冒泡 */
+av_dict_set(&amp;opts, "fflags", "nobuffer+discardcorrupt", 0);
+av_dict_set(&amp;opts, "seg_max_retry", "2", 0);      /* 分片失败 2 次就返回 AVERROR */
+av_dict_set(&amp;opts, "http_persistent", "0", 0);    /* 不复用长连接，挂死不伪装成"还在等" */
+/* 故意不设 reconnect / reconnect_streamed */</code></pre>
+<p>原则：<b>宁可报错重建，也不要无限重连</b>。重建会重新解析拿新签名，比原地死等有价值。</p>
+
+<h3>3.2 安卓：纯音频台根本不判死（更隐蔽）</h3>
+<pre><code>// ❌ 旧代码：videoFormat 对纯音频恒为 null → 整段判死逻辑被跳过
+if (p.isPlaying &amp;&amp; p.videoFormat != null) { ... pos 停滞检测 ... }
+
+// ✅ 现在：只看 isPlaying + 位置是否前进
+val pos = p.currentPosition
+if (p.isPlaying) {
+    if (pos != lastPosMs) { lastPosMs = pos; posStallTicks = 0 }
+    else if (++posStallTicks * 5000L &gt;= frameStallSec * 1000L) fail("播放位置停滞", stall = true)
+}</code></pre>
+<p>广播场景绝大多数是纯音频流，<b>这一条等于安卓版的"半天不动"从不自愈</b>。已从 APK 字节码核实：<code>videoFormat</code> 引用数 = 0。</p>
+
+<h3>3.3 为什么表现是"半天"</h3>
+<p>单次故障在几十秒内就能恢复。但旧实现每次重建<b>泄漏一个卡死的线程</b>，而每次判死又会再建一个。
+半天里积累几十次后，进程要么句柄耗尽、要么 waveOut 设备被占满，<b>自愈彻底失效</b>——表现就是"一直在播，但永远不动"。</p>
+
+<h2>四、修复清单</h2>
+<table>
+  <thead><tr><th style="width:110px">端</th><th>改动</th><th style="width:130px">文件</th></tr></thead>
+  <tbody>
+    <tr><td>Windows</td><td>去掉 <code>reconnect*</code>，加 <code>seg_max_retry=2</code> + <code>http_persistent=0</code></td><td><code>src/player.c</code></td></tr>
+    <tr><td>Windows</td><td>新增动态源定时换票（<code>resolve_at</code> 计时 + PLAYING 态判）</td><td><code>src/heal.c</code></td></tr>
+    <tr><td>Windows</td><td>换票周期默认值 1200 → <b>10800</b>（秒）</td><td><code>src/config.c</code></td></tr>
+    <tr><td>Windows</td><td>版本宏 <code>1.13</code> → <code>1.13.2</code>（之前 1.13.1 漏改，日志一直打 1.13）</td><td><code>src/nzgwin.h</code></td></tr>
+    <tr><td>Windows</td><td>自检不再被单实例挡掉；活性判据补"分片在推进"</td><td><code>src/main.c</code> / <code>liveness.c</code></td></tr>
+    <tr><td>两端</td><td>开机自启改宽字符链路 + 日志路径 <code>ansi_to_utf8()</code>（GBK 写 UTF-8 日志会乱码）</td><td><code>src/tray.c</code> / <code>util.c</code></td></tr>
+    <tr><td>安卓</td><td>去掉 <code>videoFormat != null</code>；<code>DYNAMIC_REFRESH_SEC</code> → 10800</td><td><code>PlayerManager.kt</code></td></tr>
+    <tr><td>安卓</td><td>versionCode 12→13，versionName 0.2.1→0.2.2</td><td><code>app/build.gradle.kts</code></td></tr>
+    <tr><td>工具</td><td>新增 <code>deploy.py</code>（部署/回滚）、<code>soak_play.py</code>（长跑）、修 <code>check_sources.py</code>/<code>verify_refresh.py</code></td><td><code>nzg-win/tools/</code></td></tr>
+  </tbody>
+</table>
+
+<h2>五、参数决策：换票为什么要从 20 分钟改成 3 小时</h2>
+<p>v1.13 只有 30 分钟短测数据，保守取 20 分钟。<b>六小时长测推翻了"票很短命"的假设</b>：</p>
+<table>
+  <thead><tr><th>项</th><th>单县 FM88.8（orgid 155）</th><th>巨野 FM94.1（orgid 139）</th></tr></thead>
+  <tbody>
+    <tr><td>采样次数</td><td>714</td><td>714</td></tr>
+    <tr><td>时长</td><td>5.99 h（08:45 → 14:45）</td><td>5.99 h</td></tr>
+    <tr><td>HTTP 状态</td><td><b>全部 200</b></td><td><b>全部 200</b></td></tr>
+    <tr><td>失败计数</td><td><b>恒 0</b></td><td><b>恒 0</b></td></tr>
+    <tr><td>playlist 末片时间戳</td><td>单调递增，跨度 6.0 h</td><td>单调递增</td></tr>
+    <tr><td>采样断档 &gt; 60 s</td><td>0 次</td><td>0 次</td></tr>
+  </tbody>
+</table>
+<p>结论：<b>同一签名 URL 有效期实测 ≥ 6 小时</b>。而换票不是免费的——实测一次换票的音频空档是：</p>
+<pre><code>[15:02:26] [换票] 动态签名源已用 2 分钟，主动重新解析（阈值 90 秒）
+[15:02:26] [重启] 播放器重建：动态源定时换票
+[15:02:32] [播放] 开始播放：单县人民广播电台FM88.8    ← 空档 6 秒</code></pre>
+<p>6 秒大头是 100ycdn 每次给新域名、要重做 TLS 握手（2~2.5 秒）+ 首帧。于是：</p>
+<table>
+  <thead><tr><th>周期</th><th>每天换票次数</th><th>每天静音</th><th>结论</th></tr></thead>
+  <tbody>
+    <tr><td>20 分钟（旧）</td><td>72 次</td><td>≈ 7 分钟</td><td><span class="tag bad">纯损</span></td></tr>
+    <tr><td><b>3 小时（现）</b></td><td>8 次</td><td>≈ 48 秒</td><td><span class="tag ok">对实测下界留 2 倍余量</span></td></tr>
+    <tr><td>6 小时</td><td>4 次</td><td>≈ 24 秒</td><td><span class="tag warn">贴着下界，不建议</span></td></tr>
+  </tbody>
+</table>
+<p class="muted">真过期也不怕：<code>reconnect</code> 已去掉，票失效会「报错 → 线程干净退出 → 看门狗重建」，最坏十几秒空档而不是卡死。所以周期宁可长。</p>
+
+<h2>六、验证矩阵</h2>
+<table>
+  <thead><tr><th style="width:170px">验证项</th><th>做法</th><th>结果</th></tr></thead>
+  <tbody>
+    <tr><td>全台自检 + 活性</td><td><code>守播广播.exe --selftest --live</code></td><td><b>71/71 通过、0 失败、0 跳过、446.8 秒</b>；活性 40 在播 / 0 垫片 / 31 非 HLS 判不了</td></tr>
+    <tr><td>源侧六小时长测</td><td><code>tools/litenews_session_test.py 360</code></td><td>1428 次采样全 200，fails 恒 0，playlist 一路推进</td></tr>
+    <tr><td>换票链路</td><td><code>tools/verify_refresh.py</code>（外部 config 压到 90 s）</td><td>150 秒内触发 2 次，重建→恢复 6 秒，无报错</td></tr>
+    <tr><td>长跑冒烟</td><td><code>tools/soak_play.py --minutes 2</code></td><td>播放 1 / 重建 0 / 换票 0 / 断线 0 → PASS</td></tr>
+    <tr><td>源健康快照</td><td><code>tools/check_sources.py</code>（两端合并去重）</td><td><b>73 台全 OK</b>，LAG/BAD/UNRESOLVED 均为 0</td></tr>
+    <tr><td>APK 字节码核验</td><td><code>dexdump</code> 反汇编 classes3.dex</td><td><code>DYNAMIC_REFRESH_SEC = 10800</code>；<code>videoFormat</code> 引用 0 处</td></tr>
+    <tr><td>部署一致性</td><td>md5 比对 dist↔归档；读 <code>HKCU\...\Run</code></td><td>exe <code>bdddc956…</code> 一致；自启已指 <code>v1.13.2_71台_20261023</code></td></tr>
+  </tbody>
+</table>
+
+<h2>七、坑点清单（都是这轮真踩过的）</h2>
+<table>
+  <thead><tr><th style="width:210px">现象</th><th>根因</th><th style="width:210px">以后怎么做</th></tr></thead>
+  <tbody>
+    <tr><td>判"菏泽市两台的源已死"</td><td>hznet 的 HLS 是<b>冻结时移列表</b>（<code>MEDIA-SEQUENCE</code> 恒 0）</td><td>结论写成"某源不可用"，不是"某台停播"；先找第三方官方流</td></tr>
+    <tr><td>蜻蜓 <code>20212294</code> 首测 404，判死</td><td>CDN 未回源</td><td>蜻蜓 id 探测<b>重试 2 次</b>再下结论</td></tr>
+    <tr><td>自检报"全部通过"</td><td>常驻后台时单实例互斥把 <code>--selftest</code> 挡掉：2 秒退出、exit 0、报告为空</td><td>单实例检查放到自检分派之后；<b>看报告文件非空</b>才算过</td></tr>
+    <tr><td>活性探测误报 10 台垫片</td><td>只看 lag，litenews 分片名走服务器时钟</td><td>判据改为 <code>lag≤300s || Δts&gt;0</code></td></tr>
+    <tr><td>全量扫描偶发 1 台 LAG</td><td>100ycdn 的 master 被 CDN 缓存，拿到<b>上一会话</b>的子列表（seq 停在 3，实时已 46）</td><td>LAG 时<b>重取会话复测</b>再下结论</td></tr>
+    <tr><td>部署"成功却回滚"</td><td>PowerShell 输出中文路径是 GBK，utf-8 解码成乱码，路径比对失败</td><td>按 gbk 解码 + utf-8 兜底</td></tr>
+    <tr><td>日志里路径是乱码</td><td>A 版 API 返回 ANSI(GBK)，日志是 UTF-8</td><td><code>ansi_to_utf8()</code>；注册表走 W 版</td></tr>
+    <tr><td>开机自启在别的机器不生效</td><td><code>REG_SZ</code> 存了 GBK 字节</td><td>宽字符链路 <code>RegSetValueExW</code></td></tr>
+    <tr><td>换票测试"没触发"</td><td>脚本写死台 id=48，清单重排后单县变 50</td><td>按 <code>region</code> 反查 id，别写死</td></tr>
+    <tr><td>编译出包但重启还是旧版</td><td>exe 跑在归档目录，自启写的是绝对路径</td><td>一律走 <code>deploy.py</code>，别只替换 dist</td></tr>
+    <tr><td>换票文档写"掉 1~2 秒"</td><td>没量过，实测 6 秒</td><td>参数类结论一律以实测日志为准</td></tr>
+    <tr><td>「79% 音量键无效」类问题</td><td><code>boost_mb</code> 把设备音量乘过 100% 后全部饱和</td><td>增益只能做在 PCM 域；设备音量层保持线性</td></tr>
+  </tbody>
+</table>
+
+<h2>八、操作手册</h2>
+
+<h3>8.1 加台 / 换源 / 出包（Windows）</h3>
+<pre><code># 1) 改源表（当前基线，注意文件名里的台数是快照标签，实际 74 行收 71 台）
+#    _capture/nzg_本次清单69台_20261023.csv
+# 2) 生成配置（自动取最新的 nzg_*.csv；支持 litenews:// hntv:// http(s)）
+python gen_config_from_csv.py
+# 3) 编译（会把配置编进 exe）
+bash build.sh
+# 4) 自检（71 台约 7~8 分钟）
+dist/守播广播.exe --selftest --live
+# 5) 发版：复制到 nzg_win_versions/vX.Y_N台_日期/，再部署（必须，改自启路径）
+python deploy.py --copy-from dist/守播广播.exe --exe "D:\ningz\nzg_win_versions\vX.Y_N台_日期\守播广播.exe"</code></pre>
+
+<h3>8.2 验证"是不是真的不卡了"</h3>
+<pre><code>python tools/soak_play.py --minutes 240                  # 4 小时静音长跑（默认单县）
+python tools/soak_play.py --minutes 200 --expect-refresh  # 顺便验证 3 小时换票会触发</code></pre>
+<p>报告判定：<b>重建 = 0</b> 即通过。出现每小时一次以上的重建，说明源不稳或又踩回老坑。</p>
+
+<h3>8.3 排查三板斧</h3>
+<pre><code># 台在不在播（含推进判据，不只看 200）
+python tools/check_sources.py D:/ningz/nzg/channels.json D:/ningz/nzg-win/config_default.json
+# 日志里找死亡证据（部署机按天留 7 天）
+grep -E "换票|重建|断线|线程已退出|首帧" logs/log-YYYY-MM-DD.txt
+# 确认到底跑的是哪个版本/哪个目录
+python -c "import winreg;k=winreg.OpenKey(winreg.HKEY_CURRENT_USER,r'Software\Microsoft\Windows\CurrentVersion\Run');print(winreg.QueryValueEx(k,'ShouboRadioWin')[0])"</code></pre>
+
+<h2>九、待办</h2>
+<table>
+  <thead><tr><th style="width:60px">#</th><th>事项</th><th style="width:150px">谁</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>双击 <code>nzg_win_versions\v1.13.2_71台_20261023\守播广播.exe</code>，或重启电脑（自启已指新版）。日志首行应为 <code>v1.13.2 启动</code>、<code>71 个频道</code></td><td>你</td></tr>
+    <tr><td>2</td><td>盒子接上后 <code>adb install -r 守播_nzg_027_20261023.apk</code>（v0.2.2 / versionCode 13）</td><td>你</td></tr>
+    <tr><td>3</td><td>挂一次 <code>--minutes 240</code> 长跑，把报告发我；有重建就带上 <code>_capture/soak/&lt;时间戳&gt;/logs/</code></td><td>你</td></tr>
+    <tr><td>4</td><td>菏泽音乐 91.8（停播）、陵城 98.4（平台停推）暂无可恢复源，若恢复推流再补</td><td>跟踪</td></tr>
+  </tbody>
+</table>
+
+<h2>十、附录：产物与校验值</h2>
+<table>
+  <thead><tr><th>产物</th><th>路径</th><th style="width:260px">md5</th></tr></thead>
+  <tbody>
+    <tr><td>Windows exe</td><td><code>nzg_win_versions/v1.13.2_71台_20261023/守播广播.exe</code></td><td class="mono">bdddc956de630d7da478e17ee8cb55ae</td></tr>
+    <tr><td>内置配置</td><td><code>nzg-win/config_default.json</code>（71 台）</td><td class="mono">ac8c3d672d601d9341e8fc6a4c796141</td></tr>
+    <tr><td>自检报告</td><td><code>nzg_win_versions/v1.13.2_71台_20261023/selftest.txt</code></td><td class="mono">20a84b1e492607c950fbfb3e9724c276</td></tr>
+    <tr><td>安卓 APK</td><td><code>nzg_versions/v0.2.2_27台_20261023/守播_nzg_027_20261023.apk</code></td><td class="mono">7e847f89390e5d15254cbbbf0f2f6ff4</td></tr>
+    <tr><td>六小时长测日志</td><td><code>_capture/litenews_session_test.log</code></td><td class="mono">41916070abe915f8bb13841feea8ba55</td></tr>
+    <tr><td>源快照</td><td><code>_capture/nzg_check_result.json</code></td><td>73 台明细</td></tr>
+  </tbody>
+</table>
+
+<footer>
+  守播广播 nzg · 2026-10-23 ｜ Windows v1.13.2（71 台）/ 安卓 v0.2.2（27 台）<br>
+  本文所有数字均来自当日实测日志与脚本输出，未引用历史估计值。
+</footer>
+
+</div>
+</body>
+</html>
