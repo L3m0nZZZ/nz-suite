@@ -2,11 +2,22 @@ name: Build APK
 
 on:
   push:
+    paths:
+      - 'nzp/**'
+      - 'nzg/**'
+      - '.github/workflows/build.yml'
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        module: [nzp, nzg]
+    defaults:
+      run:
+        working-directory: ${{ matrix.module }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,11 +33,12 @@ jobs:
         with:
           gradle-version: '8.7'
 
-      - name: Build debug APK
+      - name: Build debug APK (${{ matrix.module }})
         run: gradle assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: nz-player-apk
-          path: app/build/outputs/apk/debug/*.apk
+          name: ${{ matrix.module }}-apk
+          path: ${{ matrix.module }}/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
